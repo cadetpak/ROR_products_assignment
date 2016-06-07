@@ -1,0 +1,22 @@
+<h1>All Comments</h1> 
+
+<table border="1">
+  <thead>
+    <tr>
+      <td>Comments</td>
+      <td>Products</td>
+    </tr>
+  </thead>
+  <tbody>
+  <!-- loops through each 'comment' from @comments (established in #index) -->
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.comment %></td>
+      <!-- NOTE because comment belongs to product, you don't need to make @product variable! -->
+      <td><%= comment.product.name %></td>
+    </tr>
+  <% end %>  
+  </tbody>
+</table>
+
+<a href="/products">Back</a>

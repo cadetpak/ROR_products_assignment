@@ -1,0 +1,24 @@
+<h3>Show Product</h3>
+<!--  @product holds data passed in from 'products#show' -->
+<p>Name: <%= @product.name %> </p>
+<p>Description: <%= @product.description %></p>
+<p>Pricing: $<%= number_with_precision(@product.pricing, :precision => 2) %></p>
+<p>Category: <%= @product.category.name %></p> 
+
+<a href="/products/<%= @product.id %>/edit">Edit</a> | <a href='/products'>Back</a> 
+
+<h3>Comment:</h3>
+<form action="/comments" method="post"> 
+  <!-- NEED THIS AUTHENTICITY TOKEN for all forms! -->
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="text" name="comment[comment]">
+  <input type="hidden" name="comment[product]" value="<%= @product.id %>">
+  <input type="submit" value="Submit">
+</form>
+
+<!-- @comments was passed from 'products#show' -->
+<!-- created_at & updated_at are automatically captured for every model -->
+<!-- strftime is formatting! -->
+<% @comments.each do |comment| %>
+  <p><%= comment.comment %> -- <%= comment.created_at.strftime("%B %d, %Y") %></p> 
+<% end %>
