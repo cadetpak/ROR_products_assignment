@@ -1,28 +1,10 @@
-== README
+Coding Dojo ROR assignment: Products Dashboard I & II
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1. Create Product model
+2. Using restful routes, create CRUD ops (create, read, update, destroy) for product. 
+3. Create Category model
+4. Edit Product model to accept category_id, and incorporate category to CRUD as needed. 
+5. Create Comment model (and controller)
+6. Edit Product relationship to Comment (Product -< Comments). 
+7. On Product.Show, display comments associated with product and client can add more comments. 
+8. Also include Comment.Index that shows all comments. 
